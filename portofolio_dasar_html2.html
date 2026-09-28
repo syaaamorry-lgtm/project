@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <title>Portofolio sya
+     - Belajar HTML Dasar</title>
+</head>
+
+<body id="atas" 
+
+    <!-- ======================================================= -->
+    <!-- 1. HEADER & NAVIGASI LINK SEDERHANA                      -->
+    <!-- ======================================================= -->
+    <header align="center">
+        <!-- Penggunaan tag Heading h1 sampai h3 -->
+        <h1>PORTOFOLIO SAYA</h1>
+        <h3>Selamat Datang di Halaman Profil & Pembelajaran HTML</h3>
+
+        <!-- Navigasi internal menggunakan anchor text link -->
+        <nav>
+            <a href="#tentang">Tentang Saya</a> |
+            <a href="#keahlian">Keahlian & Hobi</a> |
+            <a href="#pendidikan">Riwayat Pendidikan</a> |
+            <a href="#proyek">Portofolio Proyek</a> |
+        </nav>
+    </header>
+
+    <!-- Garis pemisah horizontal -->
+    <hr size="3" color="#333333">
+
+    <!-- ======================================================= -->
+    <!-- 2. BAGIAN TENTANG SAYA (FORMATTING TEKS & WARNA)         -->
+    <!-- ======================================================= -->
+    <section id="tentang">
+        <h2>Tentang Saya</h2>
+
+        <!-- Menampilkan gambar dengan atribut border, width, dan alt -->
+        <p align="center">
+            <img src="c:\Users\siswa\Downloads\steve.jpg" alt="Foto Profil Pengguna" width="150" height="150" border="2">
+            <br>
+            <small><i>Gambar 1: Foto Profil Sederhana</i></small>
+        </p>
+
+        <!-- Contoh berbagai macam pemformatan teks HTML murni -->
+        <p>
+            Halo! Nama saya <b>septian nur syafaqi</b>. Saya adalah seorang <i>pelajar 
+            Saat ini saya sedang mempelajari <u>Dasar-Dasar HTML</u> tanpa bantuan styling eksternal.
+        </p>
+
+        <!-- Pemformatan warna dan ukuran teks menggunakan tag <font> bawaan HTML -->
+        
+
+        
+
+        <!-- Tag Blockquote untuk kutipan kata mutiara -->
+        <blockquote>
+            <p>
+                <q>pendikan adalah tiket untuk masa depan, esok adalah milik mereka yang mempersiapkan harinya.</q>
+                - <b>malcom x</b>
+            </p>
+        </blockquote>
+    </section>
+
+    <hr size="1" color="#cccccc">
+
+    <!-- ======================================================= -->
+    <!-- 3. BULLET & NUMBERING (LISTS)                           -->
+    <!-- ======================================================= -->
+    <section id="keahlian">
+
+        <!-- Unordered List (Bullet) -->
+        <h3>data diri</h3>
+        <ul type="square">
+            <li>nama: septian nur syafaqi</li>
+            <li>umur: 16 tahun</li>
+            <li>anak pertama</li>
+            <li>2 bersaudara</li>
+        </ul>
+
+        <!-- Ordered List (Numbering) dengan variasi tipe -->
+        <h3>tentang saya</h3>
+        <ol type="1">
+            <li>penyuka hewan, salah satu nya kucing</li>
+            <li>sedikit suka membaca buku cerita seperti komik/novel</li>
+            <li>suka bermain game</li>
+            
+        </ol>
+
+        <!-- Ordered List dengan tipe huruf abjad -->
+        <h3>hobi</h3>
+        <ol type="A">
+            <li>bermain game</li>
+            <li>menonton film 
+            <li>belajar materi pelajaran sekolah</li>
+        </ol>
+
+        
+
+    <hr size="1" color="#cccccc">
+
+    <!-- ======================================================= -->
+    <!-- 4. TABEL (RIWAYAT PENDIDIKAN & PROYEK)                   -->
+    <!-- ======================================================= -->
+    <section id="pendidikan">
+        <h2>Riwayat Pendidikan & Jadwal</h2>
+        <p>Tabel berikut menggunakan atribut bawaan: border, cellpadding, cellspacing, dan penggabungan kolom (colspan).
+        </p>
+
+        <!-- Tabel Riwayat Pendidikan -->
+        <table border="1" cellpadding="8" cellspacing="0" width="100%">
+            <!-- Baris Judul Tabel -->
+            <tr bgcolor="#dddddd">
+                <th>Tingkat</th>
+                <th>Nama Sekolah / Institusi</th>
+                <th>Jurusan</th>
+                <th>Tahun Kelulusan</th>
+                <th>Status</th>
+            </tr>
+            <!-- Baris Data 1 -->
+            <tr align="center">
+                <td>Mi</td>
+                <td align="left">mipaba</td>
+                <td>-</td>
+                <td>2024</td>
+                <td>Lulus</td>
+            </tr>
+            <!-- Baris Data 2 -->
+            <tr align="center">
+                <td>MTsN</td>
+                <td align="left">MTsN 2 mojokerto</td>
+                <td>-</td>
+                <td>2026</td>
+                <td>Lulus</td>
+            </tr>
+            <!-- Baris dengan Colspan -->
+            <tr bgcolor="#eeeeee">
+                <td colspan="4" align="right"><b>Total Lama Belajar Formal:</b></td>
+                <td align="center"><b>9 Tahun</b></td>
+            </tr>
+        </table>
+    </section>
+
+    <br>
+
+    <section id="proyek">
+        <h2>Daftar Proyek Latihan</h2>
+
+        <!-- Tabel Proyek dengan Rowspan -->
+        <table border="1" cellpadding="6" cellspacing="2" width="100%">
+            <tr bgcolor="#e0e0e0">
+                <th>No</th>
+                <th>Kategori</th>
+                <th>Nama Proyek</th>
+                <th>Target Selesai</th>
+            </tr>
+            <tr>
+                <td align="center">1</td>
+                <!-- Rowspan menggabungkan 2 baris kategori yang sama -->
+                <td rowspan="2" align="center" bgcolor="#f9f9f9"><b>HTML Sederhana</b></td>
+                <td>Halaman Biodata Diri</td>
+                <td>Selesai</td>
+            </tr>
+            <tr>
+                <td align="center">2</td>
+                <td>Portofolio Kurikulum Berbasis Tabel</td>
+                <td>Dalam Pengerjaan</td>
+            </tr>
+            <tr>
+                <td align="center">3</td>
+                <td align="center" bgcolor="#f9f9f9"><b>Interaktif</b></td>
+                <td>Formulir Survei Komunitas</td>
+                <td>Rencana Mendatang</td>
+            </tr>
+        </table>
+    </section>
+
+    <hr size="1" color="#cccccc">
+
+    

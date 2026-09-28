@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio - Septian Nur S.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1e3a8a', // Blue 900
+                        secondary: '#3b82f6', // Blue 500
+                        accent: '#60a5fa', // Blue 400
+                        background: '#f0f9ff', // Sky 50
+                        surface: '#ffffff',
+                        text: '#1f2937', // Gray 800
+                        textMuted: '#4b5563', // Gray 600
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: theme('colors.background');
+            color: theme('colors.text');
+            scroll-behavior: smooth;
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in forwards;
+            opacity: 0;
+        }
+
+        .slide-up {
+            animation: slideUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+
+        .skill-badge {
+            transition: all 0.3s ease;
+        }
+        .skill-badge:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-md shadow-sm">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex-shrink-0 flex items-center">
+                    <span class="font-bold text-2xl text-primary tracking-tight">SNS<span class="text-secondary">.</span></span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-textMuted hover:text-secondary font-medium transition-colors">Home</a>
+                    <a href="#about" class="text-textMuted hover:text-secondary font-medium transition-colors">Tentang</a>
+                    <a href="#skills" class="text-textMuted hover:text-secondary font-medium transition-colors">Keahlian</a>
+                    <a href="#hobbies" class="text-textMuted hover:text-secondary font-medium transition-colors">Hobi</a>
+                    <a href="#contact" class="text-textMuted hover:text-secondary font-medium transition-colors">Kontak</a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-textMuted hover:text-primary focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu panel -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg absolute w-full">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                <a href="#home" class="block px-3 py-2 text-textMuted hover:bg-background hover:text-secondary rounded-md font-medium">Home</a>
+                <a href="#about" class="block px-3 py-2 text-textMuted hover:bg-background hover:text-secondary rounded-md font-medium">Tentang</a>
+                <a href="#skills" class="block px-3 py-2 text-textMuted hover:bg-background hover:text-secondary rounded-md font-medium">Keahlian</a>
+                <a href="#hobbies" class="block px-3 py-2 text-textMuted hover:bg-background hover:text-secondary rounded-md font-medium">Hobi</a>
+                <a href="#contact" class="block px-3 py-2 text-textMuted hover:bg-background hover:text-secondary rounded-md font-medium">Kontak</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 md:pt-40 md:pb-28 px-4 flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
+        <div class="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center gap-12 w-full">
+            <div class="w-full md:w-1/2 flex flex-col items-center md:items-start text-center md:text-left slide-up">
+                <p class="text-secondary font-semibold text-lg mb-2">Halo, perkenalkan saya</p>
+                <h1 class="text-4xl md:text-6xl font-bold text-primary mb-4 leading-tight">
+                    Septian Nur S.
+                </h1>
+                <h2 class="text-2xl md:text-3xl font-medium text-textMuted mb-6">
+                    IT Enthusiast & Web Developer
+                </h2>
+                <p class="text-textMuted mb-8 text-lg max-w-lg">
+                    Seorang profesional IT yang bersemangat, ahli dalam pengembangan web modern dan infrastruktur jaringan. Selalu siap untuk tantangan teknologi berikutnya.
+                </p>
+                <div class="flex gap-4">
+                    <a href="#contact" class="bg-primary hover:bg-blue-800 text-white font-medium py-3 px-8 rounded-full shadow-lg transition-all duration-300 transform hover:-translate-y-1">
+                        Hubungi Saya
+                    </a>
+                    <a href="#about" class="bg-white hover:bg-gray-50 text-primary border border-primary font-medium py-3 px-8 rounded-full shadow-sm transition-all duration-300">
+                        Kenali Lebih Jauh
+                    </a>
+                </div>
+                <div class="flex gap-6 mt-8">
+                    <a href="#" class="text-textMuted hover:text-secondary text-2xl transition-colors"><i class="fab fa-github"></i></a>
+                    <a href="#" class="text-textMuted hover:text-secondary text-2xl transition-colors"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" class="text-textMuted hover:text-secondary text-2xl transition-colors"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            
+            <div class="w-full md:w-1/2 flex justify-center slide-up delay-200">
+                <div class="relative w-64 h-64 md:w-80 md:h-80 rounded-full p-2 bg-gradient-to-tr from-secondary to-accent shadow-2xl">
+                    <!-- Dummy Image placeholder -->
+                    <img src="c:\Users\siswa\Downloads\images pg.jpg" alt="Septian Nur S." class="w-full h-full object-cover rounded-full border-4 border-white">
+                    
+                    <!-- Decorative elements -->
+                    <div class="absolute -z-10 w-full h-full top-4 left-4 rounded-full bg-blue-200 opacity-50 blur-lg"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-4 bg-white">
+        <div class="max-w-4xl mx-auto text-center slide-up">
+            <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 relative inline-block">
+                Tentang Saya
+                <span class="absolute bottom-0 left-1/4 w-1/2 h-1 bg-secondary rounded-full mt-2"></span>
+            </h2>
+            <p class="text-lg text-textMuted leading-relaxed mt-8 text-justify md:text-center">
+                Saya adalah seorang pengembang teknologi dengan ketertarikan mendalam pada bagaimana sistem bekerja, dari baris kode hingga infrastruktur jaringan. Dengan pemahaman yang kuat di berbagai stack teknologi modern, saya berkomitmen untuk membangun solusi yang efisien, aman, dan mudah digunakan. Saya selalu antusias mempelajari teknologi baru dan menerapkannya untuk memecahkan masalah dunia nyata.
+            </p>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-4 bg-blue-50">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 slide-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 relative inline-block">
+                    Keahlian & Teknologi
+                    <span class="absolute bottom-0 left-1/4 w-1/2 h-1 bg-secondary rounded-full mt-2"></span>
+                </h2>
+                <p class="text-textMuted mt-4">Beberapa teknologi dan alat yang saya kuasai dan gunakan sehari-hari.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 slide-up delay-200">
+                <!-- Skill Card 1 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center justify-center skill-badge gap-3">
+                    <i class="fab fa-html5 text-5xl text-orange-500"></i>
+                    <span class="font-semibold text-text">Web Programming</span>
+                </div>
+                <!-- Skill Card 2 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center justify-center skill-badge gap-3">
+                    <i class="fab fa-laravel text-5xl text-red-600"></i>
+                    <span class="font-semibold text-text">Laravel</span>
+                </div>
+                <!-- Skill Card 3 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center justify-center skill-badge gap-3">
+                    <i class="fas fa-network-wired text-5xl text-blue-600"></i>
+                    <span class="font-semibold text-text">Mikrotik</span>
+                </div>
+                <!-- Skill Card 4 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center justify-center skill-badge gap-3">
+                    <i class="fas fa-server text-5xl text-indigo-500"></i>
+                    <span class="font-semibold text-text">Hermes</span>
+                </div>
+                <!-- Skill Card 5 -->
+                <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 flex flex-col items-center justify-center skill-badge gap-3">
+                    <i class="fas fa-robot text-5xl text-gray-700"></i>
+                    <span class="font-semibold text-text">OpenClaw</span>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center slide-up delay-300">
+                 <p class="text-textMuted italic">"Dan terus belajar hal baru setiap harinya."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hobbies Section -->
+    <section id="hobbies" class="py-20 px-4 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 slide-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-primary mb-4 relative inline-block">
+                    Hobi & Minat
+                    <span class="absolute bottom-0 left-1/4 w-1/2 h-1 bg-secondary rounded-full mt-2"></span>
+                </h2>
+                <p class="text-textMuted mt-4">Di luar layar komputer, inilah yang saya lakukan untuk menyegarkan pikiran.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 slide-up delay-200">
+                <!-- Hobby 1 -->
+                <div class="bg-blue-50 rounded-3xl p-8 text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border border-blue-100 group">
+                    <div class="w-20 h-20 mx-auto bg-white rounded-full flex items-center justify-center shadow-md mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-gamepad text-3xl text-secondary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">Bermain Game</h3>
+                    <p class="text-textMuted">Strategi, petualangan, atau kompetisi ringan. Bermain game membantu saya mengasah refleks dan pemecahan masalah dalam skenario yang menyenangkan.</p>
+                </div>
+                
+                <!-- Hobby 2 -->
+                <div class="bg-blue-50 rounded-3xl p-8 text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border border-blue-100 group">
+                    <div class="w-20 h-20 mx-auto bg-white rounded-full flex items-center justify-center shadow-md mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-swimmer text-3xl text-secondary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">Berenang</h3>
+                    <p class="text-textMuted">Aktivitas fisik favorit saya untuk menjaga kebugaran dan menenangkan pikiran. Berenang memberikan keseimbangan yang sempurna dari rutinitas harian.</p>
+                </div>
+
+                <!-- Hobby 3 -->
+                <div class="bg-blue-50 rounded-3xl p-8 text-center transition-all duration-300 hover:shadow-xl hover:-translate-y-2 border border-blue-100 group">
+                    <div class="w-20 h-20 mx-auto bg-white rounded-full flex items-center justify-center shadow-md mb-6 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-headphones-alt text-3xl text-secondary"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-primary mb-3">Mendengarkan Musik</h3>
+                    <p class="text-textMuted">Entah saat sedang fokus menulis kode atau bersantai, musik adalah teman setia yang membantu mengatur suasana hati dan meningkatkan produktivitas.</p>
+                </div>
+            </div>
+
+            <div class="mt-16 slide-up delay-300">
+                <h3 class="text-2xl font-bold text-primary mb-6 text-center flex items-center justify-center gap-2">
+                    <i class="fas fa-music text-secondary"></i> Playlist Favorit
+                </h3>
+                <div class="max-w-3xl mx-auto bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden">
+                    
+                    <!-- Track 1 -->
+                    <div class="track-item flex items-center p-4 border-b border-gray-50 hover:bg-blue-50 transition-colors group cursor-pointer">
+                        <audio class="audio-element" src="c:\Users\siswa\Downloads\The Weeknd - Blinding Lights (Official Audio).mp3" preload="none"></audio>
+                        <div class="w-12 h-12 bg-gray-200 rounded-md flex-shrink-0 mr-4 overflow-hidden relative">
+                            <img src="https://placehold.co/100x100/1e3a8a/ffffff?text=TW" alt="The Weeknd" class="w-full h-full object-cover">
+                            <div class="play-overlay absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <i class="fas fa-play text-white play-icon"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow">
+                            <h4 class="font-semibold text-text group-hover:text-primary transition-colors">Blinding Lights</h4>
+                            <p class="text-sm text-textMuted">The Weeknd</p>
+                        </div>
+                        <div class="hidden md:block text-textMuted text-sm mr-8">
+                            After Hours
+                        </div>
+                        <div class="text-textMuted text-sm">
+                            3:20
+                        </div>
+                    </div>
+
+                    <!-- Track 2 -->
+                    <div class="track-item flex items-center p-4 border-b border-gray-50 hover:bg-blue-50 transition-colors group cursor-pointer">
+                        <audio class="audio-element" src="c:\Users\siswa\Downloads\PASTEL GHOST ~ SHADOWS - PASTEL GHOST (youtube).mp3" preload="none"></audio>
+                        <div class="w-12 h-12 bg-gray-200 rounded-md flex-shrink-0 mr-4 overflow-hidden relative">
+                            <img src="c:\Users\siswa\Downloads\images pg.jpg" alt="Coldplay" class="w-full h-full object-cover">
+                            <div class="play-overlay absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <i class="fas fa-play text-white play-icon"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow">
+                            <h4 class="font-semibold text-text group-hover:text-primary transition-colors">shadow</h4>
+                            <p class="text-sm text-textMuted">pastel ghost</p>
+                        </div>
+                        <div class="hidden md:block text-textMuted text-sm mr-8">
+                            Parachutes
+                        </div>
+                        <div class="text-textMuted text-sm">
+                            4:26
+                        </div>
+                    </div>
+
+                    <!-- Track 3 -->
+                    <div class="track-item flex items-center p-4 hover:bg-blue-50 transition-colors group cursor-pointer">
+                        <audio class="audio-element" src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" preload="none"></audio>
+                        <div class="w-12 h-12 bg-gray-200 rounded-md flex-shrink-0 mr-4 overflow-hidden relative">
+                            <img src="https://placehold.co/100x100/60a5fa/ffffff?text=JM" alt="John Mayer" class="w-full h-full object-cover">
+                            <div class="play-overlay absolute inset-0 bg-black/40 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+                                <i class="fas fa-play text-white play-icon"></i>
+                            </div>
+                        </div>
+                        <div class="flex-grow">
+                            <h4 class="font-semibold text-text group-hover:text-primary transition-colors">New Light</h4>
+                            <p class="text-sm text-textMuted">John Mayer</p>
+                        </div>
+                        <div class="hidden md:block text-textMuted text-sm mr-8">
+                            Sob Rock
+                        </div>
+                        <div class="text-textMuted text-sm">
+                            3:37
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-4 bg-primary text-white">
+        <div class="max-w-4xl mx-auto text-center slide-up">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4">Mari Berdiskusi</h2>
+            <p class="text-blue-200 mb-10 text-lg">Tertarik untuk bekerja sama atau sekadar menyapa? Jangan ragu untuk menghubungi saya.</p>
+            
+            <div class="flex flex-col md:flex-row justify-center gap-6 mb-12">
+                <a href="mailto:hello@example.com" class="flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 px-6 py-4 rounded-xl backdrop-blur-sm transition-colors border border-white/20">
+                    <i class="fas fa-envelope text-2xl text-accent"></i>
+                    <span class="font-medium text-lg">Email Saya</span>
+                </a>
+                <a href="#" class="flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 px-6 py-4 rounded-xl backdrop-blur-sm transition-colors border border-white/20">
+                    <i class="fab fa-linkedin text-2xl text-accent"></i>
+                    <span class="font-medium text-lg">Koneksi LinkedIn</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-gray-400 py-8 text-center">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-center gap-4 mb-4">
+                <a href="#" class="hover:text-white transition-colors"><i class="fab fa-github"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p>&copy; 2026 Septian Nur S. Dibuat dengan antusias dan kode.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking a link
+        const mobileLinks = menu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.add('hidden');
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Pause animations initially if they are out of view, to play on scroll
+        document.querySelectorAll('.slide-up, .fade-in').forEach((el) => {
+            el.style.animationPlayState = 'paused';
+            observer.observe(el);
+        });
+        
+        // Ensure elements above fold animate immediately
+        setTimeout(() => {
+             document.querySelectorAll('#home .slide-up, #home .fade-in').forEach((el) => {
+                el.style.animationPlayState = 'running';
+            });
+        }, 100);
+
+        // Music Player Logic
+        const trackItems = document.querySelectorAll('.track-item');
+        let currentAudio = null;
+        let currentIcon = null;
+        let currentOverlay = null;
+
+        trackItems.forEach(track => {
+            const audio = track.querySelector('.audio-element');
+            const icon = track.querySelector('.play-icon');
+            const overlay = track.querySelector('.play-overlay');
+
+            track.addEventListener('click', () => {
+                // Pause currently playing audio if it's different from the one clicked
+                if (currentAudio && currentAudio !== audio) {
+                    currentAudio.pause();
+                    currentAudio.currentTime = 0; // Reset timeline
+                    currentIcon.classList.remove('fa-pause');
+                    currentIcon.classList.add('fa-play');
+                    currentOverlay.style.opacity = ''; // Reset to default hover behavior
+                }
+
+                // Toggle play/pause for the clicked audio
+                if (audio.paused) {
+                    audio.play().then(() => {
+                        icon.classList.remove('fa-play');
+                        icon.classList.add('fa-pause');
+                        overlay.style.opacity = '1'; // Force overlay to stay visible while playing
+                        
+                        currentAudio = audio;
+                        currentIcon = icon;
+                        currentOverlay = overlay;
+                    }).catch(err => {
+                        console.error("Audio playback failed:", err);
+                    });
+                } else {
+                    audio.pause();
+                    icon.classList.remove('fa-pause');
+                    icon.classList.add('fa-play');
+                    overlay.style.opacity = ''; // Revert to standard hover behavior
+                }
+            });
+
+            // Reset icon and UI when audio finishes playing
+            audio.addEventListener('ended', () => {
+                icon.classList.remove('fa-pause');
+                icon.classList.add('fa-play');
+                overlay.style.opacity = '';
+                currentAudio = null;
+                currentIcon = null;
+                currentOverlay = null;
+            });
+        });
+    </script>
+</body>
+</html>
